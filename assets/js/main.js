@@ -755,29 +755,5 @@
 						}, 275);
 
 					});
-	
-	// EmailJS.
-		emailjs.init('sKpvIpNcNNK9PMCke');
-	
-	// Waitlist form.
-		function resetWaitlistMessages() {
-			$('#waitlist-success').hide();
-			$('#waitlist-error').hide();
-		}
-		
-		resetWaitlistMessages();
 
-		$('#waitlist-form').on('submit', function(event) {
-			event.preventDefault();
-			emailjs.sendForm('service_gg7yt9y', 'template_hrnw0t9', this)
-				.then(function() {
-					$('#waitlist-form').trigger("reset");
-					resetWaitlistMessages();
-					$('#waitlist-success').show();
-				}, function(error) {
-					resetWaitlistMessages();
-					$('#waitlist-error').show();
-				});
-		});
-	
 })(jQuery);
